@@ -1,21 +1,20 @@
-let options = {
-    root: document.querySelector('#languages'),
-    rootMargin: '0px',
-    threshold: 1.0
+function __(id){
+  return document.getElementById(id);
+}
+
+
+function validarContrasena() {
+  var password = "LookingForAJob-Geneve99",
+      password2 = __('inpPass').value;
+  if(password == password2){
+    window.open("cv_web/index_esp.html", "_self");
+  } else {
+    __('resultado').innerHTML = '<p class="error"><strong>Error: </strong>¡Las contraseñas no coinciden!</p>';
   }
+}
 
-let observer = new IntersectionObserver(callback, options);
-
-var target = document.querySelector('#languages');
-observer.observe(target);
-
-var callback = function(entries, observer) {
-    entries.forEach(entry => {
-        if (entry.intersectionRatio > 0) {
-            entry.target.classList.add('animate');
-            observer.unobserve(entry.target);
-          }
-    });
-  };
-
-observer.observe(document.querySelector('#languages'));
+function enterEnviar(event){
+  if(event.keyCode == 13){
+    validarContrasena()
+  }
+}
