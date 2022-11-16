@@ -200,6 +200,8 @@ body {
     position: relative;
     border-radius: 20px;
     margin-top: 20px;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 .line1 {
